@@ -1,0 +1,298 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOw5D4KZi0bXp2oGg7vWUDW",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gonzalopacheco1034-bit/trading-cuantitativo/blob/main/etapa-0-preparacion\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SUwE0bUW7UeW",
+        "outputId": "83da88ee-a1a5-4bc1-b992-d0cdec015fa7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ganancias: 12 | Rendimiento: 8.0%\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Ejercicio 1\n",
+        "compra = 150\n",
+        "Venta = 162\n",
+        "Ganancias = 162 - 150\n",
+        "Rendimiento = (Ganancias / compra) * 100\n",
+        "\n",
+        "print(f\"Ganancias: {Ganancias} | Rendimiento: {Rendimiento}%\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Ejercicio 2\n",
+        "compra = 150\n",
+        "Venta = 162\n",
+        "Ganancias = Venta - compra\n",
+        "Rendimiento = (Ganancias / compra) * 100\n",
+        "\n",
+        "if Rendimiento > 0:\n",
+        "    print(\"Suba\")\n",
+        "elif Rendimiento == 0:\n",
+        "    print('Igual')\n",
+        "else:\n",
+        "    print(\"Baja\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ky9PAPL8AnD",
+        "outputId": "167eaa31-9ec7-4295-fe89-ff711a40029f"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Suba\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from ast import If\n",
+        "# Ejercicio 3\n",
+        "\n",
+        "precios = [100, 102, 101, 105, 103, 99, 104]\n",
+        "i = 0\n",
+        "Maximo = 0\n",
+        "Minimo = 1000\n",
+        "\n",
+        "Limite = len(precios) - 1\n",
+        "\n",
+        "while i <= Limite:\n",
+        "\n",
+        "  if Maximo < precios[i]:\n",
+        "     Maximo = precios[i]\n",
+        "\n",
+        "  if Minimo > precios[i]:\n",
+        "     Minimo = precios[i]\n",
+        "\n",
+        "  i = i + 1\n",
+        "\n",
+        "print(f\"Maximo: {Maximo} |  Minimo: {Minimo}\")\n"
+      ],
+      "metadata": {
+        "id": "Nfux97F0-1bN",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8ec71107-34e6-466e-e108-6ac8ea6762f9"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Maximo: 105 |  Minimo: 99\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Ejercicio 4\n",
+        "\n",
+        "precios = [100, 102, 101, 105, 103, 99, 104]\n",
+        "\n",
+        "Limite = len(precios) - 1\n",
+        "i = 1\n",
+        "\n",
+        "while i <= Limite:\n",
+        "  print(\n",
+        "      f\"Precio Actual: {precios[i]}\"\n",
+        "      f\"Precio Anterior: {precios[i - 1]}\"\n",
+        "  )\n",
+        "\n",
+        "  # Definición de Variables Internas\n",
+        "  b = i - 1\n",
+        "  PrecioActual = precios[i]\n",
+        "  PrecioAnterior = precios[b]\n",
+        "\n",
+        "  rendimiento = ((PrecioActual - PrecioAnterior) / PrecioAnterior) * 100\n",
+        "\n",
+        "  print(\n",
+        "      f\"Precio Actual: {PrecioActual} | Precio Anterior: {PrecioAnterior} | Rendimiento: {rendimiento:.2f}%\"\n",
+        "    )\n",
+        "\n",
+        "  i = i + 1\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "leihhI8ZUNiv",
+        "outputId": "145e8e6f-ddbe-47d7-cf86-e0f3b8370582"
+      },
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Precio Actual: 102Precio Anterior: 100\n",
+            "Precio Actual: 102 | Precio Anterior: 100 | Rendimiento: 2.00%\n",
+            "Precio Actual: 101Precio Anterior: 102\n",
+            "Precio Actual: 101 | Precio Anterior: 102 | Rendimiento: -0.98%\n",
+            "Precio Actual: 105Precio Anterior: 101\n",
+            "Precio Actual: 105 | Precio Anterior: 101 | Rendimiento: 3.96%\n",
+            "Precio Actual: 103Precio Anterior: 105\n",
+            "Precio Actual: 103 | Precio Anterior: 105 | Rendimiento: -1.90%\n",
+            "Precio Actual: 99Precio Anterior: 103\n",
+            "Precio Actual: 99 | Precio Anterior: 103 | Rendimiento: -3.88%\n",
+            "Precio Actual: 104Precio Anterior: 99\n",
+            "Precio Actual: 104 | Precio Anterior: 99 | Rendimiento: 5.05%\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from itertools import count\n",
+        "# Ejercicio 5\n",
+        "\n",
+        "precios = [100, 102, 101, 105, 103, 99, 104]\n",
+        "\n",
+        "Limite = len(precios) - 1\n",
+        "i = 1\n",
+        "k = 0\n",
+        "\n",
+        "RendimientosLista = []\n",
+        "cant_subidas = 0\n",
+        "cant_bajadas = 0\n",
+        "dias_positivos = 0\n",
+        "\n",
+        "while i <= Limite:\n",
+        "  # Definición de Variables Internas\n",
+        "  b = i - 1\n",
+        "  PrecioActual = precios[i]\n",
+        "  PrecioAnterior = precios[b]\n",
+        "\n",
+        "  rendimiento = round(((PrecioActual - PrecioAnterior) / PrecioAnterior) * 100, 2)\n",
+        "\n",
+        "  RendimientosLista.append(rendimiento)\n",
+        "\n",
+        "  i = i + 1\n",
+        "\n",
+        "\n",
+        "while k < len(RendimientosLista) - 1:\n",
+        "  c = k + 1\n",
+        "  rendimiento_actual = RendimientosLista[k]\n",
+        "  rendimiento_posterior = RendimientosLista[c]\n",
+        "\n",
+        "  if rendimiento_posterior > rendimiento_actual:\n",
+        "    cant_subidas += 1\n",
+        "  elif rendimiento_posterior < rendimiento_actual:\n",
+        "    cant_bajadas += 1\n",
+        "\n",
+        "  if RendimientosLista[k - 1] > 0:\n",
+        "    dias_positivos += 1\n",
+        "\n",
+        "  k = k + 1\n",
+        "\n",
+        "print(RendimientosLista)\n",
+        "\n",
+        "print(cant_subidas, cant_bajadas)\n",
+        "\n",
+        "print(\n",
+        "    f\"Veces que subio: {cant_subidas} \"\n",
+        "    f\"Veces que bajaron: {cant_bajadas} \"\n",
+        "    f\"Promedio de días positivos: {dias_positivos / len(RendimientosLista)}%\"\n",
+        ")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "f0692078-cf7a-4f85-b571-6395e481ab24",
+        "id": "P0uhkExUkfbB"
+      },
+      "execution_count": 81,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2.0, -0.98, 3.96, -1.9, -3.88, 5.05]\n",
+            "2 3\n",
+            "Veces que subio: 2 Veces que bajaron: 3 Promedio de días positivos: 0.5%\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Ejercicio 6\n",
+        "\n",
+        "# No pude resolverlo."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "id": "hevs2K1b0Jjl",
+        "outputId": "54ecc2eb-7362-4b2a-b548-798b00215b94"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "IndentationError",
+          "evalue": "unexpected indent (4030001130.py, line 19)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_39313/4030001130.py\"\u001b[0;36m, line \u001b[0;32m19\u001b[0m\n\u001b[0;31m    i += 1\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mIndentationError\u001b[0m\u001b[0;31m:\u001b[0m unexpected indent\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
